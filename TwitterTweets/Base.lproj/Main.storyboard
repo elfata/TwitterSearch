@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14109" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14088"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Baseline standard spacing" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Tweets View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="TweetsViewController" customModule="TwitterTweets" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Gge-0e-KdQ">
+                                <rect key="frame" x="0.0" y="135" width="375" height="532"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="See what's happening right now" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LGt-BK-Icv">
+                                <rect key="frame" x="16" y="50" width="343" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <searchBar contentMode="redraw" placeholder="Search for a topic" translatesAutoresizingMaskIntoConstraints="NO" id="Bax-h8-fAi">
+                                <rect key="frame" x="0.0" y="79" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                                <connections>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="kRb-2b-kEu"/>
+                                </connections>
+                            </searchBar>
+                            <activityIndicatorView hidden="YES" opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" hidesWhenStopped="YES" style="gray" translatesAutoresizingMaskIntoConstraints="NO" id="TnP-1u-n8r">
+                                <rect key="frame" x="177.5" y="333.5" width="20" height="20"/>
+                            </activityIndicatorView>
+                            <label hidden="YES" opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No results found." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="BNL-e9-Sv4">
+                                <rect key="frame" x="12" y="147" width="351" height="20.5"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="Bax-h8-fAi" firstAttribute="firstBaseline" secondItem="LGt-BK-Icv" secondAttribute="baseline" constant="12.5" symbolType="layoutAnchor" id="2Pm-M4-I1T"/>
+                            <constraint firstItem="TnP-1u-n8r" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Bq6-vc-VBB"/>
+                            <constraint firstItem="BNL-e9-Sv4" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="12" id="DrJ-d3-UO6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Gge-0e-KdQ" secondAttribute="trailing" id="GYG-JW-RGG"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="LGt-BK-Icv" secondAttribute="trailing" constant="16" id="Ihs-Cc-SFK"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Bax-h8-fAi" secondAttribute="trailing" id="JDo-4j-dQx"/>
+                            <constraint firstItem="BNL-e9-Sv4" firstAttribute="top" secondItem="Bax-h8-fAi" secondAttribute="bottom" constant="12" id="JZd-hv-eaz"/>
+                            <constraint firstItem="LGt-BK-Icv" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="16" id="VkQ-zD-NOT"/>
+                            <constraint firstItem="Bax-h8-fAi" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="WQN-v3-gSU"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="Gge-0e-KdQ" secondAttribute="bottom" id="Wg0-aq-6kz"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BNL-e9-Sv4" secondAttribute="trailing" constant="12" id="XVy-gv-Gro"/>
+                            <constraint firstItem="Gge-0e-KdQ" firstAttribute="top" secondItem="Bax-h8-fAi" secondAttribute="bottom" id="YxM-Jc-vMO"/>
+                            <constraint firstItem="TnP-1u-n8r" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="cvq-KE-LNc"/>
+                            <constraint firstItem="LGt-BK-Icv" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="q70-Fk-TYr"/>
+                            <constraint firstItem="Gge-0e-KdQ" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" id="yQp-jn-ICk"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="activityIndicator" destination="TnP-1u-n8r" id="OY8-7s-acu"/>
+                        <outlet property="noResultsLabel" destination="BNL-e9-Sv4" id="a7K-BA-6gK"/>
+                        <outlet property="searchDisplayController" destination="eVT-FZ-20t" id="dDU-Xz-Hdg"/>
+                        <outlet property="tweetsSearchBar" destination="Bax-h8-fAi" id="Qne-4o-tlJ"/>
+                        <outlet property="tweetsTableView" destination="Gge-0e-KdQ" id="wiU-7Y-fbn"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+                <searchDisplayController id="vyr-SJ-uZq">
+                    <connections>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="143-8b-LjY"/>
+                        <outlet property="searchContentsController" destination="BYZ-38-t0r" id="W6H-sT-U10"/>
+                        <outlet property="searchResultsDataSource" destination="BYZ-38-t0r" id="ckO-cA-6Uv"/>
+                        <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="gah-Mk-jhx"/>
+                    </connections>
+                </searchDisplayController>
+                <searchDisplayController id="eVT-FZ-20t">
+                    <connections>
+                        <outlet property="delegate" destination="BYZ-38-t0r" id="7mF-wk-Rvd"/>
+                        <outlet property="searchContentsController" destination="BYZ-38-t0r" id="Yzv-e3-P1R"/>
+                        <outlet property="searchResultsDataSource" destination="BYZ-38-t0r" id="ddx-yY-cNd"/>
+                        <outlet property="searchResultsDelegate" destination="BYZ-38-t0r" id="546-tf-l4t"/>
+                    </connections>
+                </searchDisplayController>
+            </objects>
+            <point key="canvasLocation" x="140" y="133.5832083958021"/>
+        </scene>
+    </scenes>
+</document>
